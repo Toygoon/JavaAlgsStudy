@@ -15,9 +15,11 @@ public class Q004 {
         int[][] A = new int[N + 1][N + 1];
 
         // 행렬에 데이터 입력
-        for (int i = 1; i <= N; i++)
-            A[i] = Arrays.stream(("0 " + br.readLine()).split(" ")).map(String::trim).mapToInt(Integer::parseInt)
-                    .toArray();
+        for (int i = 1; i <= N; i++) {
+            tmp = br.readLine().split(" ");
+            for (int j = 1; j <= N; j++)
+                A[i][j] = Integer.parseInt(tmp[j - 1]);
+        }
 
         // 구간 합 배열 생성
         int[][] D = new int[N + 1][N + 1];
